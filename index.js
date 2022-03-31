@@ -1,9 +1,9 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const Note = require('./models/note');
+const Note = require('./models/note')
 const cors = require('cors')
-const password = '1121912a';
+const password = '1121912a'
 
 const requestLogger = (request, response, next) => {
   console.log('---')
@@ -27,7 +27,7 @@ app.get('/api/notes', (request, response) => {
   Note
     .find({})
     .then(notes => {
-      response.json(notes);
+      response.json(notes)
     })
 })
 
@@ -39,7 +39,7 @@ app.get('/api/notes/:id', (request, response, next) => {
       response.status(404).end()
     }
   })
-  .catch(error => next(error));
+    .catch(error => next(error))
 })
 
 app.post('/api/notes', (request, response, next) => {
@@ -49,14 +49,14 @@ app.post('/api/notes', (request, response, next) => {
     content: body.content,
     important: body.important || false,
     date: new Date(),
-  });
+  })
 
   note
     .save()
     .then(savedNote => {
       response.json(savedNote)
     })
-    .catch(e => next(e));
+    .catch(e => next(e))
 })
 
 app.delete('/api/notes/:id', (request, response) => {
@@ -72,10 +72,10 @@ app.put('/api/notes/:id', (request, response, next) => {
   const { content, important } = request.body
 
   Note.findByIdAndUpdate(
-    request.params.id, 
+    request.params.id,
     { content, important },
     { new: true, runValidators: true, context: 'query' }
-  ) 
+  )
     .then(updatedNote => {
       response.json(updatedNote)
     })
@@ -103,7 +103,7 @@ app.use(unknownEndpoint)
 // this has to be the last loaded middleware.
 app.use(errorHandler)
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 })
