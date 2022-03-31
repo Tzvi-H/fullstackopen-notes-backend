@@ -6,7 +6,16 @@ POST http://localhost:3001/api/notes
 Content-Type: application/json
 
 {
-  "content": "note bla bla",
+  "content": "note 44",
+  "important": true
+}
+
+###
+PUT http://localhost:3001/api/notes/62449e3fec22c880658dc54f
+Content-Type: application/json
+
+{
+  "content": "1",
   "important": true
 }
 
