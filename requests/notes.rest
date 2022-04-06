@@ -6,8 +6,9 @@ POST http://localhost:3001/api/notes
 Content-Type: application/json
 
 {
-  "content": "note 44",
-  "important": true
+  "content": "also created by root/Superuser",
+  "important": true,
+  "userId": "624dc1504b3db6303a0316ef"
 }
 
 ###
