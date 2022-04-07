@@ -4,11 +4,11 @@ GET http://localhost:3001/api/notes
 ###
 POST http://localhost:3001/api/notes
 Content-Type: application/json
+Authorization: bearer yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im1sdXVra2FpIiwiaWQiOiI2MjRkYzIwYTRiM2RiNjMwM2EwMzE2ZjUiLCJpYXQiOjE2NDkzNTE3MjIsImV4cCI6MTY0OTM1MTc4Mn0.gtNAPTMTy1VsI0E8WfTCaV26jvqZBEEXIxb2O8zjjLQ
 
 {
-  "content": "also created by root/Superuser",
-  "important": true,
-  "userId": "624dc1504b3db6303a0316ef"
+  "content": "created by",
+  "important": true
 }
 
 ###
